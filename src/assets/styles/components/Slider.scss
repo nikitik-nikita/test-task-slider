@@ -1,0 +1,108 @@
+// variables
+@import '../variables/breakpoints';
+
+.slider {
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__number {
+    color: #f2f2f2;
+    font-size: .8rem;
+    padding: .5rem .75rem;
+    position: absolute;
+    top: 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 2rem;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    user-select: none;
+    transition: 0.6s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__dots-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  &__dot {
+    cursor: pointer;
+    width: .5rem;
+    height: .5rem;
+    margin: 0 4px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+
+    &-active, &:hover {
+      background-color: #717171;
+    }
+  }
+
+  ._next, ._back {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+  }
+
+  ._next {
+    left: 0;
+  }
+
+  ._back {
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: $mobile) {
+  .slider {
+    &__wrapper {
+      width: 42rem;
+      height: 32rem;
+    }
+
+    &__number {
+      font-size: 1rem;
+    }
+
+    &__button {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.25rem;
+    }
+
+    &__dot {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
